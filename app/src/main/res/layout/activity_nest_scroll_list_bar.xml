@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NestScrollListActivity">
+
+    <com.kilobird.simplenestedscrolllayout.view.SmoothNestedScrollLayout
+        android:id="@+id/recycler_list_container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/scroll_top_view"
+            android:layout_width="match_parent"
+            android:layout_height="988dp"
+            android:background="#660088ff"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="105dp"
+                android:text="喵喵喵，往下滑"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/cat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_top"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/ic_kitten" />
+
+            <ImageView
+                android:id="@+id/nice_girl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cat"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/driver" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nice_girl"
+                android:layout_marginTop="33dp"
+                android:text="凑字数1\n凑字数2\n凑字数3\n凑字数4\n凑字数"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="44dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="滑到顶了，这排字可以透出来，看得见" />
+        </RelativeLayout>
+
+        <!--中间的view，必须指定高度，不能用wrap_content，否则测量时拿不到测量高度，有点麻烦-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/middle_title"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="此标题栏滚到顶部就固定"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#123456" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.kilobird.simplenestedscrolllayout.view.SmoothNestedScrollLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/top_transparent_bar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="#33123456"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="返回"
+            android:textColor="#0099ee"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="透明背景栏"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+</FrameLayout>

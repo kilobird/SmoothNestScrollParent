@@ -1,0 +1,63 @@
+<com.kilobird.simplenestedscrolllayout.view.SmoothNestedScrollLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/scroll_top_view"
+        android:layout_width="match_parent"
+        android:layout_height="988dp"
+        android:background="#660088ff">
+
+        <TextView
+            android:id="@+id/text_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="喵喵喵"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:src="@mipmap/ic_kitten" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/driver" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:src="@mipmap/ic_launcher" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/scroll_page_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffffff"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="#0099ff"
+        app:tabSelectedTextColor="#0099ff"
+        app:tabTextColor="#cccccc" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/scroll_list_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</com.kilobird.simplenestedscrolllayout.view.SmoothNestedScrollLayout>

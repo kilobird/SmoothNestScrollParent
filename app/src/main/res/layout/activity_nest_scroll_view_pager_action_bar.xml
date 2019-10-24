@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NestScrollViewPagerActionBarActivity">
+
+    <com.kilobird.simplenestedscrolllayout.view.SmoothNestedScrollLayout
+        android:id="@+id/scroll_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:nest_scroll_content="@+id/scroll_list_viewpager"
+        app:nest_scroll_inner_header="@+id/scroll_page_indicator"
+        app:nest_scroll_top_view="@+id/scroll_top_view">
+
+        <RelativeLayout
+            android:id="@+id/scroll_top_view"
+            android:layout_width="match_parent"
+            android:layout_height="988dp"
+            android:background="#660088ff"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="105dp"
+                android:text="喵喵喵，往下滑"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/cat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_top"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/ic_kitten" />
+
+            <ImageView
+                android:id="@+id/nice_girl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cat"
+                android:layout_marginTop="20dp"
+                android:src="@mipmap/driver" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nice_girl"
+                android:layout_marginTop="33dp"
+                android:text="凑字数1\n凑字数2\n凑字数3\n凑字数4\n凑字数"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="44dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="滑到顶了，这排字可以透出来，看得见" />
+        </RelativeLayout>
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/scroll_page_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#ffffffff"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="#0099ff"
+            app:tabSelectedTextColor="#0099ff"
+            app:tabTextColor="#cccccc" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/scroll_list_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.kilobird.simplenestedscrolllayout.view.SmoothNestedScrollLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/top_transparent_bar"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:background="#fff"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="返回"
+            android:textColor="#0099ee"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="透明背景栏"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#789"
+        android:paddingStart="30dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="底部操作按钮" />
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

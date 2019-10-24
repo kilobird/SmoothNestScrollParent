@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SmoothNestedScrollLayout">
+        <attr name="nest_scroll_top_view" format="reference" />
+        <attr name="nest_scroll_inner_header" format="reference" />
+        <attr name="nest_scroll_content" format="reference" />
+    </declare-styleable>
+</resources>
